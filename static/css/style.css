@@ -1,0 +1,127 @@
+
+/* ==============================
+   navbar
+================================ */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 680px);
+    height: 40px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+    z-index: 1000;
+}
+
+.bottom-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+/* Navigation Item */
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    /* min-height: 76px; */
+    padding: 8px 12px;
+    border-radius: 22px;
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+/* Navigation Icons */
+
+.nav-item svg {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+}
+
+/* Active Navigation */
+
+.nav-item.active {
+    background: #e5f7ec;
+    color: #078640;
+    font-weight: 600;
+    /* margin-bottom: 81px; */
+    /* padding-bottom: 10px; */
+}
+
+.nav-item.active svg {
+    stroke-width: 2.5;
+}
+
+/* Hover Effect */
+
+.nav-item:not(.active):hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* Focus Accessibility */
+
+.nav-item:focus-visible {
+    outline: 3px solid rgba(7, 134, 64, 0.25);
+    outline-offset: 2px;
+}
+
+/* Main Content Spacing */
+
+.main-content {
+    padding-bottom: 125px;
+}
+
+/* ==============================
+   Mobile Responsive
+================================ */
+
+@media (max-width: 480px) {
+
+    .bottom-nav {
+        bottom: 12px;
+        width: calc(100% - 24px);
+        padding: 7px;
+        border-radius: 22px;
+    }
+
+    .bottom-nav__inner {
+        gap: 4px;
+    }
+
+    .nav-item {
+        /* min-height: 64px; */
+        gap: 5px;
+        padding: 8px 5px;
+        border-radius: 17px;
+        font-size: 13px;
+    }
+
+    .nav-item svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .main-content {
+        padding-bottom: 100px;
+    }
+}
